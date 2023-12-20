@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e907b0d3e3d4943839ea012f695a67f" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="DBSVFercejorModel.CATEGORIAS" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.COMPRA" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.DETALLE_COMPRA" Width="1.5" PointX="12.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.DETALLE_VENTA" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.GUIA_RUTA" Width="1.5" PointX="9.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.PEDIDOS" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.PRODUCTOS" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.ROLES" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VENTAS" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.CLIENTES" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.EMPLEADOS" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.PROVEEDORES" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.USUARIOS" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__PRODUCTOS__idCat__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__COMPRA__idProvee__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__COMPRA__idUsuari__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__DETALLE_C__idCom__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__DETALLE_C__idPro__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__DETALLE_V__idPro__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__DETALLE_V__idVen__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__GUIA_RUTA__idVen__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__PEDIDOS__idClien__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__PEDIDOS__idUsuar__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__EMPLEADOS__idRol__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__VENTAS__idClient__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__VENTAS__idUsuari__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBSVFercejorModel.FK__USUARIOS__idEmpl__3C69FB99" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaClientes" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaCompras" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaDetallesCompra" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaDetallesVenta" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaEmpleados" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaGuias" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaProductos" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaProveedores" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaUsuarios" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaVentas" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.ObtenerProductosActivos" Width="1.5" PointX="13.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DBSVFercejorModel.VistaPedidos" Width="1.5" PointX="10.375" PointY="14.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBSVFercejorModelStoreContainer" CdmEntityContainer="DBSVFercejorEntities">
+    <EntitySetMapping Name="CATEGORIAS">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.CATEGORIAS">
+        <MappingFragment StoreEntitySet="CATEGORIAS">
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPRA">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.COMPRA">
+        <MappingFragment StoreEntitySet="COMPRA">
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_COMPRA">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.DETALLE_COMPRA">
+        <MappingFragment StoreEntitySet="DETALLE_COMPRA">
+          <ScalarProperty Name="idDetalleCompra" ColumnName="idDetalleCompra" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="precioCompra" ColumnName="precioCompra" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_VENTA">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.DETALLE_VENTA">
+        <MappingFragment StoreEntitySet="DETALLE_VENTA">
+          <ScalarProperty Name="idDetalleVenta" ColumnName="idDetalleVenta" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GUIA_RUTA">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.GUIA_RUTA">
+        <MappingFragment StoreEntitySet="GUIA_RUTA">
+          <ScalarProperty Name="idGuia" ColumnName="idGuia" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="direccionEntrega" ColumnName="direccionEntrega" />
+          <ScalarProperty Name="fechaEnvio" ColumnName="fechaEnvio" />
+          <ScalarProperty Name="fechaEntrega" ColumnName="fechaEntrega" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PEDIDOS">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.PEDIDOS">
+        <MappingFragment StoreEntitySet="PEDIDOS">
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="tipoComprobante" ColumnName="tipoComprobante" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOS">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.PRODUCTOS">
+        <MappingFragment StoreEntitySet="PRODUCTOS">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="precioMayoritario" ColumnName="precioMayoritario" />
+          <ScalarProperty Name="precioMinoritario" ColumnName="precioMinoritario" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLES">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.ROLES">
+        <MappingFragment StoreEntitySet="ROLES">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VENTAS">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VENTAS">
+        <MappingFragment StoreEntitySet="VENTAS">
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="tipoComprobante" ColumnName="tipoComprobante" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTES">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.CLIENTES">
+        <MappingFragment StoreEntitySet="CLIENTES">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADOS">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.EMPLEADOS">
+        <MappingFragment StoreEntitySet="EMPLEADOS">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDORES">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.PROVEEDORES">
+        <MappingFragment StoreEntitySet="PROVEEDORES">
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.USUARIOS">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaClientes">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaClientes">
+        <MappingFragment StoreEntitySet="VistaClientes">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaCompras">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaCompras">
+        <MappingFragment StoreEntitySet="VistaCompras">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+          <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaDetallesCompra">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaDetallesCompra">
+        <MappingFragment StoreEntitySet="VistaDetallesCompra">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precioCompra" ColumnName="precioCompra" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idDetalleCompra" ColumnName="idDetalleCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaDetallesVenta">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaDetallesVenta">
+        <MappingFragment StoreEntitySet="VistaDetallesVenta">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idDetalleVenta" ColumnName="idDetalleVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaEmpleados">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaEmpleados">
+        <MappingFragment StoreEntitySet="VistaEmpleados">
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaGuias">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaGuias">
+        <MappingFragment StoreEntitySet="VistaGuias">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaEntrega" ColumnName="fechaEntrega" />
+          <ScalarProperty Name="fechaEnvio" ColumnName="fechaEnvio" />
+          <ScalarProperty Name="direccionEntrega" ColumnName="direccionEntrega" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idGuia" ColumnName="idGuia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaProductos">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaProductos">
+        <MappingFragment StoreEntitySet="VistaProductos">
+          <ScalarProperty Name="precioMinoritario" ColumnName="precioMinoritario" />
+          <ScalarProperty Name="precioMayoritario" ColumnName="precioMayoritario" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaProveedores">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaProveedores">
+        <MappingFragment StoreEntitySet="VistaProveedores">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaUsuarios">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaUsuarios">
+        <MappingFragment StoreEntitySet="VistaUsuarios">
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaVentas">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaVentas">
+        <MappingFragment StoreEntitySet="VistaVentas">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="tipoComprobante" ColumnName="tipoComprobante" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObtenerProductosActivos">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.ObtenerProductosActivos">
+        <MappingFragment StoreEntitySet="ObtenerProductosActivos">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="precioMinoritario" ColumnName="precioMinoritario" />
+          <ScalarProperty Name="precioMayoritario" ColumnName="precioMayoritario" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VistaPedidos">
+      <EntityTypeMapping TypeName="DBSVFercejorModel.VistaPedidos">
+        <MappingFragment StoreEntitySet="VistaPedidos">
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="tipoComprobante" ColumnName="tipoComprobante" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerClientesPorAnio" FunctionName="DBSVFercejorModel.Store.ObtenerClientesPorAnio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerClientesPorAnio_Result">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerEmpleadosPorLetra" FunctionName="DBSVFercejorModel.Store.ObtenerEmpleadosPorLetra">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerEmpleadosPorLetra_Result">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerEmpleadosPorRol" FunctionName="DBSVFercejorModel.Store.ObtenerEmpleadosPorRol">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerEmpleadosPorRol_Result">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerProductoPorID" FunctionName="DBSVFercejorModel.Store.ObtenerProductoPorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerProductoPorID_Result">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="precioMayoritario" ColumnName="precioMayoritario" />
+          <ScalarProperty Name="precioMinoritario" ColumnName="precioMinoritario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerProductosPorNombre" FunctionName="DBSVFercejorModel.Store.ObtenerProductosPorNombre">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerProductosPorNombre_Result">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="precioMayoritario" ColumnName="precioMayoritario" />
+          <ScalarProperty Name="precioMinoritario" ColumnName="precioMinoritario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerProductosPorProveedor" FunctionName="DBSVFercejorModel.Store.ObtenerProductosPorProveedor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerProductosPorProveedor_Result">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="precioMayoritario" ColumnName="precioMayoritario" />
+          <ScalarProperty Name="precioMinoritario" ColumnName="precioMinoritario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerProductosPorStock" FunctionName="DBSVFercejorModel.Store.ObtenerProductosPorStock">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerProductosPorStock_Result">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerProveedoresPorAnio" FunctionName="DBSVFercejorModel.Store.ObtenerProveedoresPorAnio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerProveedoresPorAnio_Result">
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerUltimosClientes" FunctionName="DBSVFercejorModel.Store.ObtenerUltimosClientes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSVFercejorModel.ObtenerUltimosClientes_Result">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CrearPedido" FunctionName="DBSVFercejorModel.Store.sp_CrearPedido" />
+    <FunctionImportMapping FunctionImportName="sp_EliminarPedido" FunctionName="DBSVFercejorModel.Store.sp_EliminarPedido" />
+    <FunctionImportMapping FunctionImportName="sp_eliminarProducto" FunctionName="DBSVFercejorModel.Store.sp_eliminarProducto" />
+    <FunctionImportMapping FunctionImportName="sp_insertarProducto" FunctionName="DBSVFercejorModel.Store.sp_insertarProducto" />
+    <FunctionImportMapping FunctionImportName="sp_ModificarPedido" FunctionName="DBSVFercejorModel.Store.sp_ModificarPedido" />
+    <FunctionImportMapping FunctionImportName="sp_modificarProducto" FunctionName="DBSVFercejorModel.Store.sp_modificarProducto" />
+  </EntityContainerMapping>
+</Mapping>

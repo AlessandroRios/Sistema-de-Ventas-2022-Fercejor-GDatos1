@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBSVFercejorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIAS">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCategoria" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="COMPRA">
+    <Key>
+      <PropertyRef Name="idCompra" />
+    </Key>
+    <Property Name="idCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" />
+    <Property Name="idProveedor" Type="int" />
+    <Property Name="tipoDocumento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="numeroDocumento" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DETALLE_COMPRA">
+    <Key>
+      <PropertyRef Name="idDetalleCompra" />
+    </Key>
+    <Property Name="idDetalleCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCompra" Type="int" />
+    <Property Name="idProducto" Type="int" />
+    <Property Name="precioCompra" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DETALLE_VENTA">
+    <Key>
+      <PropertyRef Name="idDetalleVenta" />
+    </Key>
+    <Property Name="idDetalleVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idVenta" Type="int" />
+    <Property Name="idProducto" Type="int" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="subTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GUIA_RUTA">
+    <Key>
+      <PropertyRef Name="idGuia" />
+    </Key>
+    <Property Name="idGuia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idVenta" Type="int" />
+    <Property Name="direccionEntrega" Type="text" Nullable="false" />
+    <Property Name="fechaEnvio" Type="datetime" />
+    <Property Name="fechaEntrega" Type="datetime" />
+    <Property Name="estado" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PEDIDOS">
+    <Key>
+      <PropertyRef Name="idPedido" />
+    </Key>
+    <Property Name="idPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" />
+    <Property Name="idCliente" Type="int" />
+    <Property Name="prioridad" Type="int" Nullable="false" />
+    <Property Name="tipoComprobante" Type="char" MaxLength="1" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PRODUCTOS">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCategoria" Type="int" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="text" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="precioMayoritario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="precioMinoritario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="estado" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreRol" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VENTAS">
+    <Key>
+      <PropertyRef Name="idVenta" />
+    </Key>
+    <Property Name="idVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" />
+    <Property Name="idCliente" Type="int" />
+    <Property Name="tipoComprobante" Type="char" MaxLength="1" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLIENTES">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EMPLEADOS">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="idRol" Type="int" />
+  </EntityType>
+  <EntityType Name="PROVEEDORES">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="razonSocial" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="documento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpleado" Type="int" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.ObtenerProductosActivos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ObtenerProductosActivos">
+    <Key>
+      <PropertyRef Name="idProducto" />
+      <PropertyRef Name="nombreProducto" />
+      <PropertyRef Name="stock" />
+    </Key>
+    <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCategoria" Type="int" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="text" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="precioMayoritario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="precioMinoritario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="estado" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaClientes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaClientes">
+    <Key>
+      <PropertyRef Name="idCliente" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="Apellido" />
+      <PropertyRef Name="telefono" />
+      <PropertyRef Name="correo" />
+    </Key>
+    <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaCompras' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaCompras">
+    <Key>
+      <PropertyRef Name="idCompra" />
+      <PropertyRef Name="nombreUsuario" />
+      <PropertyRef Name="razonSocial" />
+      <PropertyRef Name="tipoDocumento" />
+      <PropertyRef Name="numeroDocumento" />
+    </Key>
+    <Property Name="idCompra" Type="int" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="razonSocial" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="tipoDocumento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="numeroDocumento" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaDetallesCompra' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaDetallesCompra">
+    <Key>
+      <PropertyRef Name="idDetalleCompra" />
+      <PropertyRef Name="idCompra" />
+      <PropertyRef Name="nombreProducto" />
+      <PropertyRef Name="precioCompra" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="montoTotal" />
+    </Key>
+    <Property Name="idDetalleCompra" Type="int" Nullable="false" />
+    <Property Name="idCompra" Type="int" Nullable="false" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precioCompra" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaDetallesVenta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaDetallesVenta">
+    <Key>
+      <PropertyRef Name="idDetalleVenta" />
+      <PropertyRef Name="idVenta" />
+      <PropertyRef Name="nombreProducto" />
+      <PropertyRef Name="subTotal" />
+    </Key>
+    <Property Name="idDetalleVenta" Type="int" Nullable="false" />
+    <Property Name="idVenta" Type="int" Nullable="false" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="subTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaEmpleados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaEmpleados">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="apellido" />
+      <PropertyRef Name="telefono" />
+      <PropertyRef Name="Cargo" />
+    </Key>
+    <Property Name="idEmpleado" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaGuias' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaGuias">
+    <Key>
+      <PropertyRef Name="idGuia" />
+      <PropertyRef Name="idVenta" />
+      <PropertyRef Name="direccionEntrega" />
+    </Key>
+    <Property Name="idGuia" Type="int" Nullable="false" />
+    <Property Name="idVenta" Type="int" Nullable="false" />
+    <Property Name="direccionEntrega" Type="text" Nullable="false" />
+    <Property Name="fechaEnvio" Type="datetime" />
+    <Property Name="fechaEntrega" Type="datetime" />
+    <Property Name="estado" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaPedidos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaPedidos">
+    <Key>
+      <PropertyRef Name="idPedido" />
+      <PropertyRef Name="Encargado" />
+      <PropertyRef Name="Cliente" />
+      <PropertyRef Name="prioridad" />
+    </Key>
+    <Property Name="idPedido" Type="int" Nullable="false" />
+    <Property Name="Encargado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Cliente" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="prioridad" Type="int" Nullable="false" />
+    <Property Name="tipoComprobante" Type="char" MaxLength="1" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaProductos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaProductos">
+    <Key>
+      <PropertyRef Name="idProducto" />
+      <PropertyRef Name="nombreProducto" />
+      <PropertyRef Name="stock" />
+    </Key>
+    <Property Name="idProducto" Type="int" Nullable="false" />
+    <Property Name="nombreCategoria" Type="varchar" MaxLength="40" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcion" Type="text" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="precioMayoritario" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="precioMinoritario" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaProveedores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaProveedores">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+      <PropertyRef Name="razonSocial" />
+      <PropertyRef Name="documento" />
+      <PropertyRef Name="correo" />
+      <PropertyRef Name="telefono" />
+    </Key>
+    <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="razonSocial" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="documento" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaUsuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaUsuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+      <PropertyRef Name="nombreUsuario" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="apellido" />
+      <PropertyRef Name="telefono" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="9" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBSVFercejor.dbo.VistaVentas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VistaVentas">
+    <Key>
+      <PropertyRef Name="idVenta" />
+      <PropertyRef Name="nombreUsuario" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="Apellido" />
+    </Key>
+    <Property Name="idVenta" Type="int" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="tipoComprobante" Type="char" MaxLength="1" />
+    <Property Name="montoTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="fechaRegistro" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__COMPRA__idProvee__4F7CD00D">
+    <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="0..1" />
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDORES">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="COMPRA">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__COMPRA__idUsuari__4E88ABD4">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="COMPRA">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_C__idCom__534D60F1">
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="0..1" />
+    <End Role="DETALLE_COMPRA" Type="Self.DETALLE_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPRA">
+        <PropertyRef Name="idCompra" />
+      </Principal>
+      <Dependent Role="DETALLE_COMPRA">
+        <PropertyRef Name="idCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_C__idPro__5441852A">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="0..1" />
+    <End Role="DETALLE_COMPRA" Type="Self.DETALLE_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="DETALLE_COMPRA">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_V__idPro__5DCAEF64">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="0..1" />
+    <End Role="DETALLE_VENTA" Type="Self.DETALLE_VENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="DETALLE_VENTA">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_V__idVen__5CD6CB2B">
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="0..1" />
+    <End Role="DETALLE_VENTA" Type="Self.DETALLE_VENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENTAS">
+        <PropertyRef Name="idVenta" />
+      </Principal>
+      <Dependent Role="DETALLE_VENTA">
+        <PropertyRef Name="idVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPLEADOS__idRol__398D8EEE">
+    <End Role="ROLES" Type="Self.ROLES" Multiplicity="0..1" />
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLES">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="EMPLEADOS">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GUIA_RUTA__idVen__628FA481">
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="0..1" />
+    <End Role="GUIA_RUTA" Type="Self.GUIA_RUTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENTAS">
+        <PropertyRef Name="idVenta" />
+      </Principal>
+      <Dependent Role="GUIA_RUTA">
+        <PropertyRef Name="idVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDOS__idClien__66603565">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
+    <End Role="PEDIDOS" Type="Self.PEDIDOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="PEDIDOS">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDOS__idUsuar__656C112C">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+    <End Role="PEDIDOS" Type="Self.PEDIDOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="PEDIDOS">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTOS__idCat__48CFD27E">
+    <End Role="CATEGORIAS" Type="Self.CATEGORIAS" Multiplicity="0..1" />
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIAS">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="PRODUCTOS">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USUARIOS__idEmpl__3C69FB99">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="0..1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__idClient__59063A47">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__idUsuari__5812160E">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ObtenerClientesPorAnio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="anio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerEmpleadosPorLetra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="letraInicial" Type="char" Mode="In" />
+  </Function>
+  <Function Name="ObtenerEmpleadosPorRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombreRol" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerProductoPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idProducto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerProductosPorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombreProducto" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerProductosPorProveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombreProveedor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerProductosPorStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stockMinimo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerProveedoresPorAnio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="anio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerUltimosClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cantidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_CrearPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idUsuario" Type="int" Mode="In" />
+    <Parameter Name="idCliente" Type="int" Mode="In" />
+    <Parameter Name="prioridad" Type="int" Mode="In" />
+    <Parameter Name="tipoComprobante" Type="char" Mode="In" />
+    <Parameter Name="montoTotal" Type="decimal" Mode="In" />
+    <Parameter Name="fechaRegistro" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_EliminarPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPedido" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_eliminarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idProducto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_insertarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCategoria" Type="int" Mode="In" />
+    <Parameter Name="nombreProducto" Type="varchar" Mode="In" />
+    <Parameter Name="descripcion" Type="text" Mode="In" />
+    <Parameter Name="stock" Type="int" Mode="In" />
+    <Parameter Name="precioMayoritario" Type="decimal" Mode="In" />
+    <Parameter Name="precioMinoritario" Type="decimal" Mode="In" />
+    <Parameter Name="estado" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_ModificarPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPedido" Type="int" Mode="In" />
+    <Parameter Name="idUsuario" Type="int" Mode="In" />
+    <Parameter Name="idCliente" Type="int" Mode="In" />
+    <Parameter Name="prioridad" Type="int" Mode="In" />
+    <Parameter Name="tipoComprobante" Type="char" Mode="In" />
+    <Parameter Name="montoTotal" Type="decimal" Mode="In" />
+    <Parameter Name="fechaRegistro" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_modificarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idProducto" Type="int" Mode="In" />
+    <Parameter Name="idCategoria" Type="int" Mode="In" />
+    <Parameter Name="nombreProducto" Type="varchar" Mode="In" />
+    <Parameter Name="descripcion" Type="text" Mode="In" />
+    <Parameter Name="stock" Type="int" Mode="In" />
+    <Parameter Name="precioMayoritario" Type="decimal" Mode="In" />
+    <Parameter Name="precioMinoritario" Type="decimal" Mode="In" />
+    <Parameter Name="estado" Type="char" Mode="In" />
+  </Function>
+  <EntityContainer Name="DBSVFercejorModelStoreContainer">
+    <EntitySet Name="CATEGORIAS" EntityType="Self.CATEGORIAS" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="COMPRA" EntityType="Self.COMPRA" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="DETALLE_COMPRA" EntityType="Self.DETALLE_COMPRA" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="DETALLE_VENTA" EntityType="Self.DETALLE_VENTA" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="GUIA_RUTA" EntityType="Self.GUIA_RUTA" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="PEDIDOS" EntityType="Self.PEDIDOS" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLES" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="VENTAS" EntityType="Self.VENTAS" Schema="NEGOCIO" store:Type="Tables" />
+    <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" Schema="PERSONAS" store:Type="Tables" />
+    <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" Schema="PERSONAS" store:Type="Tables" />
+    <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDORES" Schema="PERSONAS" store:Type="Tables" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="PERSONAS" store:Type="Tables" />
+    <EntitySet Name="ObtenerProductosActivos" EntityType="Self.ObtenerProductosActivos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ObtenerProductosActivos].[idProducto] AS [idProducto], 
+    [ObtenerProductosActivos].[idCategoria] AS [idCategoria], 
+    [ObtenerProductosActivos].[nombreProducto] AS [nombreProducto], 
+    [ObtenerProductosActivos].[descripcion] AS [descripcion], 
+    [ObtenerProductosActivos].[stock] AS [stock], 
+    [ObtenerProductosActivos].[precioMayoritario] AS [precioMayoritario], 
+    [ObtenerProductosActivos].[precioMinoritario] AS [precioMinoritario], 
+    [ObtenerProductosActivos].[estado] AS [estado]
+    FROM [dbo].[ObtenerProductosActivos] AS [ObtenerProductosActivos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaClientes" EntityType="Self.VistaClientes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaClientes].[idCliente] AS [idCliente], 
+    [VistaClientes].[nombre] AS [nombre], 
+    [VistaClientes].[Apellido] AS [Apellido], 
+    [VistaClientes].[telefono] AS [telefono], 
+    [VistaClientes].[correo] AS [correo], 
+    [VistaClientes].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaClientes] AS [VistaClientes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaCompras" EntityType="Self.VistaCompras" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaCompras].[idCompra] AS [idCompra], 
+    [VistaCompras].[nombreUsuario] AS [nombreUsuario], 
+    [VistaCompras].[razonSocial] AS [razonSocial], 
+    [VistaCompras].[tipoDocumento] AS [tipoDocumento], 
+    [VistaCompras].[numeroDocumento] AS [numeroDocumento], 
+    [VistaCompras].[montoTotal] AS [montoTotal], 
+    [VistaCompras].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaCompras] AS [VistaCompras]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaDetallesCompra" EntityType="Self.VistaDetallesCompra" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaDetallesCompra].[idDetalleCompra] AS [idDetalleCompra], 
+    [VistaDetallesCompra].[idCompra] AS [idCompra], 
+    [VistaDetallesCompra].[nombreProducto] AS [nombreProducto], 
+    [VistaDetallesCompra].[precioCompra] AS [precioCompra], 
+    [VistaDetallesCompra].[cantidad] AS [cantidad], 
+    [VistaDetallesCompra].[montoTotal] AS [montoTotal], 
+    [VistaDetallesCompra].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaDetallesCompra] AS [VistaDetallesCompra]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaDetallesVenta" EntityType="Self.VistaDetallesVenta" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaDetallesVenta].[idDetalleVenta] AS [idDetalleVenta], 
+    [VistaDetallesVenta].[idVenta] AS [idVenta], 
+    [VistaDetallesVenta].[nombreProducto] AS [nombreProducto], 
+    [VistaDetallesVenta].[cantidad] AS [cantidad], 
+    [VistaDetallesVenta].[subTotal] AS [subTotal], 
+    [VistaDetallesVenta].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaDetallesVenta] AS [VistaDetallesVenta]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaEmpleados" EntityType="Self.VistaEmpleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaEmpleados].[idEmpleado] AS [idEmpleado], 
+    [VistaEmpleados].[nombre] AS [nombre], 
+    [VistaEmpleados].[apellido] AS [apellido], 
+    [VistaEmpleados].[telefono] AS [telefono], 
+    [VistaEmpleados].[Cargo] AS [Cargo]
+    FROM [dbo].[VistaEmpleados] AS [VistaEmpleados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaGuias" EntityType="Self.VistaGuias" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaGuias].[idGuia] AS [idGuia], 
+    [VistaGuias].[idVenta] AS [idVenta], 
+    [VistaGuias].[direccionEntrega] AS [direccionEntrega], 
+    [VistaGuias].[fechaEnvio] AS [fechaEnvio], 
+    [VistaGuias].[fechaEntrega] AS [fechaEntrega], 
+    [VistaGuias].[estado] AS [estado]
+    FROM [dbo].[VistaGuias] AS [VistaGuias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaPedidos" EntityType="Self.VistaPedidos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaPedidos].[idPedido] AS [idPedido], 
+    [VistaPedidos].[Encargado] AS [Encargado], 
+    [VistaPedidos].[Cliente] AS [Cliente], 
+    [VistaPedidos].[prioridad] AS [prioridad], 
+    [VistaPedidos].[tipoComprobante] AS [tipoComprobante], 
+    [VistaPedidos].[montoTotal] AS [montoTotal], 
+    [VistaPedidos].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaPedidos] AS [VistaPedidos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaProductos" EntityType="Self.VistaProductos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaProductos].[idProducto] AS [idProducto], 
+    [VistaProductos].[nombreCategoria] AS [nombreCategoria], 
+    [VistaProductos].[nombreProducto] AS [nombreProducto], 
+    [VistaProductos].[descripcion] AS [descripcion], 
+    [VistaProductos].[stock] AS [stock], 
+    [VistaProductos].[precioMayoritario] AS [precioMayoritario], 
+    [VistaProductos].[precioMinoritario] AS [precioMinoritario]
+    FROM [dbo].[VistaProductos] AS [VistaProductos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaProveedores" EntityType="Self.VistaProveedores" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaProveedores].[idProveedor] AS [idProveedor], 
+    [VistaProveedores].[razonSocial] AS [razonSocial], 
+    [VistaProveedores].[documento] AS [documento], 
+    [VistaProveedores].[correo] AS [correo], 
+    [VistaProveedores].[telefono] AS [telefono], 
+    [VistaProveedores].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaProveedores] AS [VistaProveedores]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaUsuarios" EntityType="Self.VistaUsuarios" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaUsuarios].[idUsuario] AS [idUsuario], 
+    [VistaUsuarios].[nombreUsuario] AS [nombreUsuario], 
+    [VistaUsuarios].[nombre] AS [nombre], 
+    [VistaUsuarios].[apellido] AS [apellido], 
+    [VistaUsuarios].[telefono] AS [telefono]
+    FROM [dbo].[VistaUsuarios] AS [VistaUsuarios]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaVentas" EntityType="Self.VistaVentas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VistaVentas].[idVenta] AS [idVenta], 
+    [VistaVentas].[nombreUsuario] AS [nombreUsuario], 
+    [VistaVentas].[nombre] AS [nombre], 
+    [VistaVentas].[Apellido] AS [Apellido], 
+    [VistaVentas].[tipoComprobante] AS [tipoComprobante], 
+    [VistaVentas].[montoTotal] AS [montoTotal], 
+    [VistaVentas].[fechaRegistro] AS [fechaRegistro]
+    FROM [dbo].[VistaVentas] AS [VistaVentas]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__COMPRA__idProvee__4F7CD00D" Association="Self.FK__COMPRA__idProvee__4F7CD00D">
+      <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+      <End Role="COMPRA" EntitySet="COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__COMPRA__idUsuari__4E88ABD4" Association="Self.FK__COMPRA__idUsuari__4E88ABD4">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="COMPRA" EntitySet="COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_C__idCom__534D60F1" Association="Self.FK__DETALLE_C__idCom__534D60F1">
+      <End Role="COMPRA" EntitySet="COMPRA" />
+      <End Role="DETALLE_COMPRA" EntitySet="DETALLE_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_C__idPro__5441852A" Association="Self.FK__DETALLE_C__idPro__5441852A">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="DETALLE_COMPRA" EntitySet="DETALLE_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_V__idPro__5DCAEF64" Association="Self.FK__DETALLE_V__idPro__5DCAEF64">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_V__idVen__5CD6CB2B" Association="Self.FK__DETALLE_V__idVen__5CD6CB2B">
+      <End Role="VENTAS" EntitySet="VENTAS" />
+      <End Role="DETALLE_VENTA" EntitySet="DETALLE_VENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPLEADOS__idRol__398D8EEE" Association="Self.FK__EMPLEADOS__idRol__398D8EEE">
+      <End Role="ROLES" EntitySet="ROLES" />
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GUIA_RUTA__idVen__628FA481" Association="Self.FK__GUIA_RUTA__idVen__628FA481">
+      <End Role="VENTAS" EntitySet="VENTAS" />
+      <End Role="GUIA_RUTA" EntitySet="GUIA_RUTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDOS__idClien__66603565" Association="Self.FK__PEDIDOS__idClien__66603565">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="PEDIDOS" EntitySet="PEDIDOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDOS__idUsuar__656C112C" Association="Self.FK__PEDIDOS__idUsuar__656C112C">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="PEDIDOS" EntitySet="PEDIDOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTOS__idCat__48CFD27E" Association="Self.FK__PRODUCTOS__idCat__48CFD27E">
+      <End Role="CATEGORIAS" EntitySet="CATEGORIAS" />
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USUARIOS__idEmpl__3C69FB99" Association="Self.FK__USUARIOS__idEmpl__3C69FB99">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__idClient__59063A47" Association="Self.FK__VENTAS__idClient__59063A47">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__idUsuari__5812160E" Association="Self.FK__VENTAS__idUsuari__5812160E">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

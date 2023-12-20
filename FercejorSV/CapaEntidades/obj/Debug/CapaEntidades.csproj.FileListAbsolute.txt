@@ -1,0 +1,15 @@
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\CapaEntidades.dll.config
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\CapaEntidades.dll
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\CapaEntidades.pdb
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\CapaDatos.dll
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\EntityFramework.dll
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\CapaDatos.pdb
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\CapaDatos.dll.config
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\EntityFramework.xml
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\obj\Debug\CapaEntidades.csproj.AssemblyReference.cache
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\obj\Debug\CapaEntidades.csproj.CopyComplete
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\obj\Debug\CapaEntidades.dll
+C:\Users\aless\OneDrive\Escritorio\CICLO 4\GESTION DE INFORMACION 1\PROYECTO SISTEMA DE VENTAS C#\FercejorSV\CapaEntidades\obj\Debug\CapaEntidades.pdb
